@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <link>https://glefhoho.github.io/</link>
+    <description>Recent content on </description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 29 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://glefhoho.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About Me</title>
+      <link>https://glefhoho.github.io/about/</link>
+      <pubDate>Fri, 29 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://glefhoho.github.io/about/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m a microbiologist passionate about applying advanced qPCR techniques, computational biology, and high-throughput sequencing to better understand and mitigate &lt;em&gt;foodborne pathogens&lt;/em&gt; in agricultural environments. My research bridges field sampling, lab experimentation, and data science to support evidence-based strategies for &lt;strong&gt;precision animal health&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;I earned my degrees in Molecular Biology and Environmental Engineering, and completed postdoctoral training at both the U.S. Environmental Protection Agency and the University of Notre Dame, experiences that deepened my passion for research and collaboration. Throughout my career, I’ve found the most rewarding work happens in interdisciplinary, team-based environments.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Projects</title>
+      <link>https://glefhoho.github.io/projects/</link>
+      <pubDate>Fri, 29 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://glefhoho.github.io/projects/</guid>
+      <description>&lt;p&gt;&lt;em&gt;&lt;strong&gt;HERE ARE A FEW PROJECTS I WILL BE WORKING ON:&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Precision Animal Health Monitoring&lt;br&gt;&#xA;&lt;em&gt;Goal:&lt;/em&gt; Develop scalable, field-deployable tools to monitor zoonotic pathogens in poultry environments.&lt;br&gt;&#xA;&lt;em&gt;Approach:&lt;/em&gt; Duplex qPCR, shotgun metagenomics, machine learning algorithms.&lt;br&gt;&#xA;&lt;em&gt;Why it matters:&lt;/em&gt; Early detection of zoonotic pathogens and AMR markers can help reduce foodborne outbreaks and improve animal welfare.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;AMR Surveillance in Agricultural Systems&lt;br&gt;&#xA;&lt;em&gt;Focus:&lt;/em&gt; Investigating how environment factors and farm practices shape the resistome in poultry production.&lt;br&gt;&#xA;&lt;em&gt;Tools:&lt;/em&gt; 16S, shotgun metagenomics, and ONT sequencing, plasmidome profiling, phenotypic resistance screening, etc.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Publications</title>
+      <link>https://glefhoho.github.io/publications/</link>
+      <pubDate>Fri, 29 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://glefhoho.github.io/publications/</guid>
+      <description>&lt;p&gt;For a full list of my peer-reviewed publications, please visit my &lt;a href=&#34;https://scholar.google.com/citations?user=wPsBNOsAAAAJ&amp;amp;hl=en&#34;&gt;Google Scholar profile&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;Selected Publications&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Using core genome and machine learning for serovar prediction in &lt;em&gt;Salmonella enterica&lt;/em&gt; subspecies I strains&lt;/strong&gt;&lt;br&gt;&#xA;&lt;em&gt;FEMS Microbiol. Lett.&lt;/em&gt; (2025)&lt;br&gt;&#xA;&lt;a href=&#34;https://doi.org/10.1093/femsle/fnaf040&#34;&gt;https://doi.org/10.1093/femsle/fnaf040&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Metagenomics evidence of a novel Thermoplasmata-like archaeon decomposing heterodisulfide in nonacidic estuary-ocean sediment&lt;/strong&gt;&lt;br&gt;&#xA;&lt;em&gt;ACS ES&amp;amp;T Water&lt;/em&gt; 4 (12), 5800-5810 (2024)&lt;br&gt;&#xA;&lt;a href=&#34;https://doi.org/10.1021/acsestwater.4c00790&#34;&gt;https://doi.org/10.1021/acsestwater.4c00790&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;A novel Slope-Matrix-Graph algorithm to analyze compositional microbiome data&lt;/strong&gt;&lt;br&gt;&#xA;&lt;em&gt;Microorganisms&lt;/em&gt; 12 (9), 1866 (2024)&lt;br&gt;&#xA;&lt;a href=&#34;https://doi.org/10.3390/microorganisms12091866&#34;&gt;https://doi.org/10.3390/microorganisms12091866&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Virus-impacted community adaptation in oligotrophic groundwater revealed by Hi-C coupled metagenomic and viromic study&lt;/strong&gt;&lt;br&gt;&#xA;&lt;em&gt;J. Hazard. Mater.&lt;/em&gt; 458, 131944 (2023)&lt;br&gt;&#xA;&lt;a href=&#34;https://doi.org/10.1016/j.jhazmat.2023.131944&#34;&gt;https://doi.org/10.1016/j.jhazmat.2023.131944&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Talks</title>
+      <link>https://glefhoho.github.io/talks/</link>
+      <pubDate>Fri, 29 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://glefhoho.github.io/talks/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Invited Seminar:&lt;/strong&gt; &lt;em&gt;Integrating qPCR, metagenomics, and machine learning to study zoonotic pathogens in poultry settings&lt;/em&gt;&lt;br&gt;&#xA;Department of Food Science and Technology, University of Georgia, Athens, GA – &lt;strong&gt;Feb 2025&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Conference Presentation:&lt;/strong&gt; &lt;em&gt;Quantification of &lt;em&gt;Salmonella&lt;/em&gt; in broilers using duplex qPCR assays&lt;/em&gt;&lt;br&gt;&#xA;International Poultry Scientific Forum, Atlanta, GA – &lt;strong&gt;Jan 2025&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Conference Presentation:&lt;/strong&gt; &lt;em&gt;Quantitative Real-Time PCR Fecal Source Identification in the Tillamook Basin&lt;/em&gt;&lt;br&gt;&#xA;The 19th International Symposium on Health-Related Water Microbiology &amp;amp; UNC Water Microbiology Conference, Chapel Hill, North Carolina – &lt;strong&gt;May 2017&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Teaching</title>
+      <link>https://glefhoho.github.io/teaching/</link>
+      <pubDate>Fri, 29 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://glefhoho.github.io/teaching/</guid>
+      <description>&lt;p&gt;I’m excited to begin contributing to teaching at UTIA!&lt;/p&gt;&#xA;&lt;p&gt;Course content is currently in development—stay tuned for updates on future offerings related to &lt;em&gt;molecular microbiology&lt;/em&gt;, &lt;em&gt;quantitative PCR&lt;/em&gt;, and &lt;em&gt;bioinformatics for animal health&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Posts</title>
+      <link>https://glefhoho.github.io/posts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://glefhoho.github.io/posts/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Coming soon&amp;hellip;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Stay tuned for updates on lab projects and activities!&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
