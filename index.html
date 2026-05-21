@@ -272,99 +272,146 @@
     .course-table td { padding: 0.65rem 1rem; border-bottom: 1px solid var(--border); }
     .course-table tr:nth-child(even) td { background: var(--light); }
 
-    /* ── STUDENTS ── */
-    .student-list { list-style: none; }
-    .student-list li {
-      padding: 0.55rem 0;
-      font-size: 0.95rem;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: baseline;
-      gap: 0.7rem;
+    /* ── LAB MEMBERS ── */
+    .lab-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 0.5rem;
     }
-    .student-list li:last-child { border-bottom: none; }
-    .student-list .badge {
-      background: var(--slate);
-      color: #fff;
-      font-size: 0.7rem;
-      padding: 0.1rem 0.5rem;
+
+    .member-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .member-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    }
+    .member-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      background: var(--light);
+    }
+    .member-card .member-info {
+      padding: 1rem;
+    }
+    .member-card .member-name {
+      font-weight: 700;
+      font-size: 0.97rem;
+      color: var(--slate);
+      margin-bottom: 0.2rem;
+    }
+    .member-card .member-role {
+      font-size: 0.8rem;
+      color: var(--orange);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.4rem;
+    }
+    .member-card .member-desc {
+      font-size: 0.83rem;
+      color: var(--slate2);
+      line-height: 1.5;
+    }
+    .member-card .member-email {
+      display: inline-block;
+      margin-top: 0.6rem;
+      font-size: 0.78rem;
+      color: var(--slate2);
+    }
+    .member-card .member-email:hover { color: var(--orange); }
+
+    /* PI card highlight */
+    .member-card.pi {
+      border-top: 4px solid var(--orange);
+    }
+    .member-card.pi .member-role {
+      color: var(--slate);
+      background: var(--orange);
+      display: inline-block;
+      padding: 0.1rem 0.6rem;
       border-radius: 3px;
-      white-space: nowrap;
+      color: white;
+      margin-bottom: 0.5rem;
     }
-    .student-list .badge.ug { background: var(--orange); }
+
 
     /* ── FOOTER ── */
     footer {
       background: var(--slate);
-      color: #8fa0b0;
+      color: #a0aab4;
       text-align: center;
       padding: 2rem 1rem;
-      font-size: 0.82rem;
-      margin-top: 2rem;
+      font-size: 0.83rem;
     }
-    footer a { color: var(--orange); }
-    footer .utk-line { margin-top: 0.4rem; font-size: 0.78rem; opacity: 0.7; }
+    footer span { color: var(--orange); }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 640px) {
       .hero-inner { flex-direction: column; gap: 1.5rem; text-align: center; }
       .hero-links { justify-content: center; }
-      nav ul li a { padding: 1.1rem 0.5rem; font-size: 0.75rem; }
-      nav .logo { font-size: 0.85rem; }
+      nav ul { gap: 0; }
+      nav ul li a { padding: 1rem 0.5rem; font-size: 0.78rem; }
+      .lab-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
     }
   </style>
 </head>
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">UNIVERSITY OF TENNESSEE INSTITUTE OF AGRICULTURE</div>
+  <div class="topbar">UNIVERSITY OF TENNESSEE INSTITUTE OF AGRICULTURE</div>
 
-<!-- NAV -->
-<nav>
-  <div class="logo">Dr. Xiang <span>Li</span></div>
-  <ul>
-    <li><a href="#news">News</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#research">Research</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#teaching">Teaching</a></li>
-    <li><a href="#students">Students</a></li>
-  </ul>
-</nav>
+  <nav>
+    <div class="logo">Dr. <span>Xiang Li</span></div>
+    <ul>
+      <li><a href="#news">News</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#lab">Lab Members</a></li>
+    </ul>
+  </nav>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-inner">
-    <img src="photo.jpg" alt="Dr. Xiang Li" onerror="this.src='https://via.placeholder.com/160x160/333D47/FF8200?text=XL'"/>
-    <div class="hero-text">
-      <h1>Dr. Xiang <span>Li</span></h1>
-      <div class="rank">Assistant Professor (TTAP)</div>
-      <div class="dept">
-        Department of Animal Science &amp; Department of Large Animal Clinical Sciences<br/>
-        University of Tennessee Institute of Agriculture
-      </div>
-      <div class="hero-links">
-        <a href="mailto:xli166@utk.edu">✉ Email</a>
-        <a href="https://scholar.google.com/citations?user=wPsBNOsAAAAJ&hl=en" target="_blank">Google Scholar</a>
-        <a href="https://github.com/glefhoho" target="_blank">GitHub</a>
+  <!-- ── HERO ── -->
+  <section id="hero">
+    <div class="hero-inner">
+      <!-- Replace photo.jpg with your actual headshot file -->
+      <img src="photo.jpg" alt="Dr. Xiang Li" onerror="this.src='https://via.placeholder.com/160x160/333D47/FF8200?text=XL'"/>
+      <div class="hero-text">
+        <h1>Dr. <span>Xiang Li</span></h1>
+        <div class="rank">Assistant Professor (TTAP)</div>
+        <div class="dept">
+          Department of Animal Science &amp; Department of Large Animal Clinical Sciences<br>
+          University of Tennessee Institute of Agriculture
+        </div>
+        <div class="hero-links">
+          <a href="mailto:xli166@utk.edu">✉ Email</a>
+          <a href="https://scholar.google.com/citations?user=wPsBNOsAAAAJ&hl=en" target="_blank">Google Scholar</a><!-- TODO: replace with your actual Google Scholar URL -->
+          <a href="https://github.com/glefhoho" target="_blank">GitHub</a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- NEWS -->
-<section id="news">
-  <div class="section-wrap">
-    <h2>News</h2>
-    <ul class="news-list">
+  <!-- ── NEWS ── -->
+  <section id="news">
+    <div class="section-wrap">
+      <h2>News</h2>
+      <ul class="news-list">
 
-      <!-- ✏️ HOW TO ADD NEWS:
-           Copy one <li> block below, paste it at the TOP of this list,
-           update the date, tag, and text. Tags available:
-           tag-award / tag-paper / tag-grant / tag-student / tag-media / tag-event
-      -->
+        <!-- ✏️ ADD NEW NEWS ITEMS AT THE TOP. Copy one <li> block and paste above this line. -->
 
-      <li>
+        <li>
         <div class="news-date">
           <span class="month">May</span>
           2026
@@ -387,37 +434,28 @@
           Congratulations to Kaylea Simmons (DRA Sp26) for successfully graduating! Wish you best of luck!
         </div>
       </li> 
-    </ul>
-  </div>
-</section>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-wrap">
-    <h2>About</h2>
-    <p>
-      Dr. Xiang Li is an Assistant Professor (TTAP) jointly appointed in the Department of Animal Science
-      and the Department of Large Animal Clinical Sciences at the University of Tennessee Institute of Agriculture.
-      His research program focuses on <strong>Precision Animal Health</strong>, integrating molecular diagnostics,
-      microbiome science, and bioinformatics to improve food safety and animal production.
-    </p>
-    <p>
-      Dr. Li's work spans quantitative PCR assay development, next-generation sequencing, antimicrobial
-      resistance surveillance, and <em>Salmonella</em> ecology in livestock systems. He collaborates closely
-      with federal agencies including the USDA and EPA, and with industry partners across the poultry sectors.
-    </p>
-    <div class="stat-row">
-      <div class="stat-box"><div class="num">40+</div><div class="lbl">Publications</div></div>
-      <div class="stat-box"><div class="num">1,200+</div><div class="lbl">Citations</div></div>
-      <div class="stat-box"><div class="num">$250K+</div><div class="lbl">Funding</div></div>
-      <div class="stat-box"><div class="num">10+</div><div class="lbl">Years Research</div></div>
+      </ul>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- RESEARCH -->
-<section id="research">
-  <div class="section-wrap">
+  <!-- ── ABOUT ── -->
+  <section id="about">
+    <div class="section-wrap">
+      <h2>About</h2>
+      <p>
+        Dr. Xiang Li is an Assistant Professor (TTAP) jointly appointed in the Department of Animal Science and the Department of Large Animal Clinical Sciences at the University of Tennessee Institute of Agriculture. His research program focuses on <strong>Precision Animal Health</strong>, integrating molecular diagnostics, microbiome science, and bioinformatics to improve food safety and animal production.
+      </p>
+      <p>
+        Dr. Li's work spans quantitative PCR assay development, next-generation sequencing, antimicrobial resistance surveillance, and <em>Salmonella</em> ecology in livestock systems. He collaborates closely with federal agencies including the USDA and EPA, and with industry partners across the poultry sectors.
+      </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RESEARCH ── -->
+  <section id="research">
+    <div class="section-wrap">
     <h2>Research</h2>
     <div class="research-grid">
       <div class="research-card">
@@ -443,10 +481,10 @@
       <div class="research-card">
         <h3>Food Safety</h3>
         <p>Integrated approaches to reduce pathogen load and antimicrobial resistance in the food supply chain, from pre-harvest to processing.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 <!-- EXPERIENCE -->
 <section id="experience">
@@ -519,43 +557,41 @@
   </div>
 </section>
 
-<!-- STUDENTS -->
-<section id="students">
-  <div class="section-wrap">
-    <h2>Students</h2>
-    <h3 style="color:var(--slate); font-size:1rem; margin-bottom:0.8rem;">Current Students</h3>
-    <ul class="student-list">
-      <!-- TODO: Replace with your actual students -->
-      <li>
-        <span class="badge">Ph.D.</span>
-        [Student Name] — [Research Topic]
-      </li>
-      <li>
-        <span class="badge">M.S.</span>
-        [Student Name] — [Research Topic]
-      </li>
-      <li>
-        <span class="badge ug">Undergrad</span>
-        [Student Name] — [Research Topic]
-      </li>
-    </ul>
 
-    <h3 style="color:var(--slate); font-size:1rem; margin-top:1.8rem; margin-bottom:0.8rem;">Alumni</h3>
-    <ul class="student-list">
-      <!-- TODO: Replace with your actual alumni -->
-      <li>
-        <span class="badge">Undergrad</span>
-        Kaylea Simmons
-      </li>
-    </ul>
-  </div>
-</section>
+  <!-- ── LAB MEMBERS ── -->
+  <section id="lab">
+    <div class="section-wrap">
+      <h2>Lab Members</h2>
 
-<!-- FOOTER -->
-<footer>
-  <div>© 2025 Dr. Xiang Li · <a href="mailto:xli166@utk.edu">xli166@utk.edu</a></div>
-  <div class="utk-line">University of Tennessee Institute of Agriculture · Knoxville, TN 37996</div>
-</footer>
+      <!-- PI Card — always visible -->
+      <div class="lab-grid">
+        <div class="member-card pi">
+          <img src="photo.jpg" alt="Dr. Xiang Li" onerror="this.src='https://via.placeholder.com/200x200/333D47/FF8200?text=XL'"/>
+          <div class="member-info">
+            <div class="member-name">Dr. Xiang Li</div>
+            <div class="member-role">Principal Investigator</div>
+            <div class="member-desc">Assistant Professor, Animal Science &amp; Large Animal Clinical Sciences</div>
+            <a class="member-email" href="mailto:xli166@utk.edu">xli166@utk.edu</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── STUDENT SECTION — hidden until students arrive ──
+           When you're ready to add students:
+           1. Delete the "lab-coming-soon" block below
+           2. Move new member-card blocks INSIDE the lab-grid above
+           3. Upload their photo to GitHub (e.g. student1.jpg)
+           4. Set img src="student1.jpg"
+      -->
+
+
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <p>© 2025 <span>Dr. Xiang Li</span> · University of Tennessee Institute of Agriculture · <a href="mailto:xli166@utk.edu" style="color:#a0aab4;">xli166@utk.edu</a></p>
+  </footer>
 
 </body>
 </html>
