@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dr. Xiang Li | University of Tennessee</title>
+  <style>
+    :root {
+      --orange:  #FF8200;
+      --slate:   #333D47;
+      --slate2:  #5c666f;
+      --smokey:  #4B4B4B;
+      --light:   #f5f6f7;
+      --white:   #ffffff;
+      --border:  #dde1e6;
+      --text:    #2b2b2b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Montserrat', 'Arial', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.75;
+    }
+
+    a { color: var(--slate); text-decoration: none; }
+    a:hover { color: var(--orange); text-decoration: underline; }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      background: var(--orange);
+      color: var(--white);
+      text-align: center;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      padding: 0.35rem 1rem;
+      font-weight: 600;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--slate);
+      padding: 0 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+    }
+    nav .logo {
+      color: var(--white);
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 1rem 0;
+      letter-spacing: 0.03em;
+    }
+    nav .logo span { color: var(--orange); }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 0.2rem;
+    }
+    nav ul li a {
+      color: #c8d0d8;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      padding: 1.1rem 0.9rem;
+      display: block;
+      transition: color 0.2s, background 0.2s;
+      border-bottom: 3px solid transparent;
+    }
+    nav ul li a:hover {
+      color: var(--orange);
+      text-decoration: none;
+      border-bottom-color: var(--orange);
+    }
+
+    /* ── HERO ── */
+    #hero {
+      background:
+        linear-gradient(160deg, rgba(51,61,71,0.93) 0%, rgba(51,61,71,0.80) 50%, rgba(255,130,0,0.25) 100%),
+        url('https://ag.tennessee.edu/Documents/UTIA%20Campus%20Photo.jpg') center/cover no-repeat;
+      color: var(--white);
+      padding: 5rem 2rem 4.5rem;
+    }
+    .hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    #hero img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--orange);
+      flex-shrink: 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+    .hero-text h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      line-height: 1.2;
+    }
+    .hero-text h1 span { color: var(--orange); }
+    .hero-text .rank  { font-size: 1.05rem; color: #d0dae4; margin-bottom: 0.2rem; }
+    .hero-text .dept  { font-size: 0.95rem; color: #a8bccf; margin-bottom: 1.4rem; line-height: 1.5; }
+    .hero-links { display: flex; gap: 0.7rem; flex-wrap: wrap; }
+    .hero-links a {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--white);
+      padding: 0.4rem 1rem;
+      border-radius: 4px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .hero-links a:hover {
+      background: var(--orange);
+      border-color: var(--orange);
+      text-decoration: none;
+    }
+
+    /* ── SECTION WRAPPER ── */
+    .section-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem;
+    }
+    .section-wrap + .section-wrap { border-top: 1px solid var(--border); }
+
+    h2 {
+      font-size: 1.5rem;
+      color: var(--slate);
+      margin-bottom: 1.6rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid var(--orange);
+      display: inline-block;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── NEWS ── */
+    .news-list { list-style: none; }
+    .news-list li {
+      display: flex;
+      gap: 1.2rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+    .news-list li:last-child { border-bottom: none; }
+    .news-date {
+      min-width: 90px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--white);
+      background: var(--orange);
+      border-radius: 4px;
+      padding: 0.25rem 0.6rem;
+      text-align: center;
+      line-height: 1.4;
+      margin-top: 0.2rem;
+    }
+    .news-date .month { display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; }
+    .news-date .year  { display: block; font-size: 0.72rem; opacity: 0.85; }
+    .news-body { font-size: 0.95rem; color: var(--text); line-height: 1.65; }
+    .news-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.1rem 0.5rem;
+      border-radius: 3px;
+      margin-right: 0.4rem;
+      vertical-align: middle;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .tag-award   { background: #fff3e0; color: #e65100; }
+    .tag-paper   { background: #e8f5e9; color: #2e7d32; }
+    .tag-student { background: #e3f2fd; color: #1565c0; }
+    .tag-grant   { background: #f3e5f5; color: #6a1b9a; }
+    .tag-media   { background: #fce4ec; color: #880e4f; }
+    .tag-event   { background: #e0f7fa; color: #006064; }
+
+    /* ── ABOUT ── */
+    #about p { font-size: 1rem; color: var(--text); margin-bottom: 1rem; }
+    .stat-row {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+    .stat-box {
+      background: var(--light);
+      border-top: 4px solid var(--orange);
+      padding: 1rem 1.5rem;
+      border-radius: 4px;
+      text-align: center;
+      flex: 1;
+      min-width: 130px;
+    }
+    .stat-box .num { font-size: 1.8rem; font-weight: 700; color: var(--slate); }
+    .stat-box .lbl { font-size: 0.8rem; color: var(--slate2); text-transform: uppercase; letter-spacing: 0.06em; }
+
+    /* ── RESEARCH ── */
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+    }
+    .research-card {
+      background: var(--light);
+      border-left: 5px solid var(--orange);
+      padding: 1.3rem 1.5rem;
+      border-radius: 4px;
+    }
+    .research-card h3 { font-size: 0.97rem; color: var(--slate); margin-bottom: 0.45rem; font-weight: 700; }
+    .research-card p  { font-size: 0.88rem; color: var(--slate2); line-height: 1.6; }
+
+    /* ── EXPERIENCE ── */
+    .timeline { list-style: none; position: relative; padding-left: 1.8rem; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0.4rem;
+      top: 0.4rem;
+      bottom: 0.4rem;
+      width: 2px;
+      background: var(--border);
+    }
+    .timeline li {
+      position: relative;
+      padding: 0.6rem 0 0.6rem 1rem;
+      font-size: 0.95rem;
+    }
+    .timeline li::before {
+      content: '';
+      position: absolute;
+      left: -1.05rem;
+      top: 1rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--orange);
+      border: 2px solid var(--white);
+      box-shadow: 0 0 0 2px var(--orange);
+    }
+    .timeline .period { font-weight: 700; color: var(--slate); }
+    .timeline .role   { color: var(--text); }
+    .timeline .org    { color: var(--slate2); font-size: 0.88rem; }
+
+    /* ── TEACHING ── */
+    .course-table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+    .course-table th {
+      background: var(--slate);
+      color: var(--white);
+      padding: 0.7rem 1rem;
+      text-align: left;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .course-table td { padding: 0.65rem 1rem; border-bottom: 1px solid var(--border); }
+    .course-table tr:nth-child(even) td { background: var(--light); }
+
+    /* ── STUDENTS ── */
+    .student-list { list-style: none; }
+    .student-list li {
+      padding: 0.55rem 0;
+      font-size: 0.95rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: baseline;
+      gap: 0.7rem;
+    }
+    .student-list li:last-child { border-bottom: none; }
+    .student-list .badge {
+      background: var(--slate);
+      color: #fff;
+      font-size: 0.7rem;
+      padding: 0.1rem 0.5rem;
+      border-radius: 3px;
+      white-space: nowrap;
+    }
+    .student-list .badge.ug { background: var(--orange); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--slate);
+      color: #8fa0b0;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.82rem;
+      margin-top: 2rem;
+    }
+    footer a { color: var(--orange); }
+    footer .utk-line { margin-top: 0.4rem; font-size: 0.78rem; opacity: 0.7; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .hero-inner { flex-direction: column; gap: 1.5rem; text-align: center; }
+      .hero-links { justify-content: center; }
+      nav ul li a { padding: 1.1rem 0.5rem; font-size: 0.75rem; }
+      nav .logo { font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">UNIVERSITY OF TENNESSEE INSTITUTE OF AGRICULTURE</div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Dr. Xiang <span>Li</span></div>
+  <ul>
+    <li><a href="#news">News</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#teaching">Teaching</a></li>
+    <li><a href="#students">Students</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <img src="photo.jpg" alt="Dr. Xiang Li" onerror="this.src='https://via.placeholder.com/160x160/333D47/FF8200?text=XL'"/>
+    <div class="hero-text">
+      <h1>Dr. Xiang <span>Li</span></h1>
+      <div class="rank">Assistant Professor (TTAP)</div>
+      <div class="dept">
+        Department of Animal Science &amp; Department of Large Animal Clinical Sciences<br/>
+        University of Tennessee Institute of Agriculture
+      </div>
+      <div class="hero-links">
+        <a href="mailto:xli166@utk.edu">✉ Email</a>
+        <a href="https://scholar.google.com/TODO" target="_blank">Google Scholar</a>
+        <a href="https://github.com/glefhoho" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section id="news">
+  <div class="section-wrap">
+    <h2>News</h2>
+    <ul class="news-list">
+
+      <!-- ✏️ HOW TO ADD NEWS:
+           Copy one <li> block below, paste it at the TOP of this list,
+           update the date, tag, and text. Tags available:
+           tag-award / tag-paper / tag-grant / tag-student / tag-media / tag-event
+      -->
+
+      <li>
+        <div class="news-date">
+          <span class="month">May</span>
+          2025
+        </div>
+        <div class="news-body">
+          <span class="news-tag tag-student">Student</span>
+          <!-- TODO: Replace with real student news -->
+          Congratulations to [Student Name] for successfully defending their [MS/PhD] thesis!
+        </div>
+      </li>
+
+      <li>
+        <div class="news-date">
+          <span class="month">Apr</span>
+          2025
+        </div>
+        <div class="news-body">
+          <span class="news-tag tag-award">Award</span>
+          <!-- TODO: Replace with real award -->
+          Dr. Li received the [Award Name] from [Organization].
+        </div>
+      </li>
+
+      <li>
+        <div class="news-date">
+          <span class="month">Mar</span>
+          2025
+        </div>
+        <div class="news-body">
+          <span class="news-tag tag-paper">Publication</span>
+          <!-- TODO: Replace with real paper -->
+          New paper published in <em>[Journal Name]</em>: "[Paper Title]."
+          <a href="https://doi.org/TODO" target="_blank">Read →</a>
+        </div>
+      </li>
+
+      <li>
+        <div class="news-date">
+          <span class="month">Jan</span>
+          2025
+        </div>
+        <div class="news-body">
+          <span class="news-tag tag-grant">Grant</span>
+          <!-- TODO: Replace with real grant -->
+          Lab receives funding from [Agency] for project "[Project Title]."
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-wrap">
+    <h2>About</h2>
+    <p>
+      Dr. Xiang Li is an Assistant Professor (TTAP) jointly appointed in the Department of Animal Science
+      and the Department of Large Animal Clinical Sciences at the University of Tennessee Institute of Agriculture.
+      His research program focuses on <strong>Precision Animal Health</strong>, integrating molecular diagnostics,
+      microbiome science, and bioinformatics to improve food safety and animal production.
+    </p>
+    <p>
+      Dr. Li's work spans quantitative PCR assay development, next-generation sequencing, antimicrobial
+      resistance surveillance, and <em>Salmonella</em> ecology in livestock systems. He collaborates closely
+      with federal agencies including the USDA and EPA, and with industry partners across the poultry and
+      swine sectors.
+    </p>
+    <div class="stat-row">
+      <div class="stat-box"><div class="num">40+</div><div class="lbl">Publications</div></div>
+      <div class="stat-box"><div class="num">1,000+</div><div class="lbl">Citations</div></div>
+      <div class="stat-box"><div class="num">$250K+</div><div class="lbl">Funding</div></div>
+      <div class="stat-box"><div class="num">10+</div><div class="lbl">Years Research</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="section-wrap">
+    <h2>Research</h2>
+    <div class="research-grid">
+      <div class="research-card">
+        <h3>🔬 Molecular Diagnostics</h3>
+        <p>Development and validation of quantitative PCR assays for rapid, sensitive detection of foodborne pathogens in animal production environments.</p>
+      </div>
+      <div class="research-card">
+        <h3>🧬 Microbiome Science</h3>
+        <p>16S rRNA and shotgun metagenomic profiling of gut and environmental microbiomes in poultry and swine to understand health and production outcomes.</p>
+      </div>
+      <div class="research-card">
+        <h3>💻 Bioinformatics</h3>
+        <p>Pipeline development for high-throughput sequencing data analysis, including metagenomics, resistome characterization, and comparative genomics.</p>
+      </div>
+      <div class="research-card">
+        <h3>🐔 Salmonella Ecology</h3>
+        <p>Ecology, persistence, and antimicrobial resistance of <em>Salmonella</em> in broiler and layer production systems from farm to processing.</p>
+      </div>
+      <div class="research-card">
+        <h3>💊 Antimicrobial Resistance</h3>
+        <p>Surveillance and characterization of antimicrobial resistance genes (ARGs) in livestock environments and their potential transfer to human pathogens.</p>
+      </div>
+      <div class="research-card">
+        <h3>🌱 Food Safety</h3>
+        <p>Integrated approaches to reduce pathogen load and antimicrobial resistance in the food supply chain, from pre-harvest to processing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-wrap">
+    <h2>Experience</h2>
+    <ul class="timeline">
+      <li>
+        <div class="period">2022 – Present</div>
+        <div class="role">Assistant Professor (TTAP)</div>
+        <div class="org">Department of Animal Science &amp; Department of Large Animal Clinical Sciences, University of Tennessee Institute of Agriculture</div>
+      </li>
+      <li>
+        <div class="period">2019 – 2022</div>
+        <div class="role">Postdoctoral Research Associate</div>
+        <div class="org"><!-- TODO: Institution --> [Institution Name]</div>
+      </li>
+      <li>
+        <div class="period">2014 – 2019</div>
+        <div class="role">Ph.D. in [Field]</div>
+        <div class="org"><!-- TODO: University --> [University Name]</div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- TEACHING -->
+<section id="teaching">
+  <div class="section-wrap">
+    <h2>Teaching</h2>
+    <table class="course-table">
+      <thead>
+        <tr>
+          <th>Course</th>
+          <th>Title</th>
+          <th>Level</th>
+          <th>Semester</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- TODO: Replace with your actual courses -->
+        <tr>
+          <td>ANSC 4XX</td>
+          <td>[Course Title]</td>
+          <td>Undergraduate</td>
+          <td>Fall</td>
+        </tr>
+        <tr>
+          <td>ANSC 5XX</td>
+          <td>[Course Title]</td>
+          <td>Graduate</td>
+          <td>Spring</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- STUDENTS -->
+<section id="students">
+  <div class="section-wrap">
+    <h2>Students</h2>
+    <h3 style="color:var(--slate); font-size:1rem; margin-bottom:0.8rem;">Current Students</h3>
+    <ul class="student-list">
+      <!-- TODO: Replace with your actual students -->
+      <li>
+        <span class="badge">Ph.D.</span>
+        [Student Name] — [Research Topic]
+      </li>
+      <li>
+        <span class="badge">M.S.</span>
+        [Student Name] — [Research Topic]
+      </li>
+      <li>
+        <span class="badge ug">Undergrad</span>
+        [Student Name] — [Research Topic]
+      </li>
+    </ul>
+
+    <h3 style="color:var(--slate); font-size:1rem; margin-top:1.8rem; margin-bottom:0.8rem;">Alumni</h3>
+    <ul class="student-list">
+      <!-- TODO: Replace with your actual alumni -->
+      <li>
+        <span class="badge">M.S.</span>
+        [Alumni Name] — [Current Position]
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>© 2025 Dr. Xiang Li · <a href="mailto:xli166@utk.edu">xli166@utk.edu</a></div>
+  <div class="utk-line">University of Tennessee Institute of Agriculture · Knoxville, TN 37996</div>
+</footer>
+
+</body>
+</html>
