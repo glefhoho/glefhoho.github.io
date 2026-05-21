@@ -280,8 +280,8 @@
       align-items: flex-start;
     }
 
-    /* PI card — slightly larger */
-    .member-card.pi {
+    /* All member cards — same size */
+    .member-card {
       width: 180px;
       background: var(--white);
       border: 1px solid var(--border);
@@ -291,57 +291,36 @@
       text-align: center;
       flex-shrink: 0;
     }
-    .member-card.pi img {
+    .member-card img {
       width: 180px;
       height: 180px;
       object-fit: cover;
       display: block;
-      border-bottom: 3px solid var(--orange);
-    }
-
-    /* Regular member cards — smaller */
-    .member-card {
-      width: 150px;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      text-align: center;
-      flex-shrink: 0;
-    }
-    .member-card img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      display: block;
       border-bottom: 3px solid var(--border);
     }
-    .member-card .member-info {
-      padding: 0.7rem 0.6rem 0.8rem;
+    /* PI card — orange bottom border on photo */
+    .member-card.pi img {
+      border-bottom: 3px solid var(--orange);
     }
-    .member-card.pi .member-info {
+    .member-card .member-info {
       padding: 0.8rem 0.8rem 1rem;
     }
     .member-name {
       font-weight: 700;
-      font-size: 0.88rem;
+      font-size: 0.95rem;
       color: var(--slate);
       margin-bottom: 0.25rem;
     }
-    .member-card.pi .member-name {
-      font-size: 0.95rem;
-    }
     .member-role {
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.06em;
       color: var(--orange);
       margin-bottom: 0.3rem;
     }
+    /* PI role badge style */
     .member-card.pi .member-role {
-      font-size: 0.72rem;
       background: var(--orange);
       color: var(--white);
       display: inline-block;
@@ -350,7 +329,7 @@
       margin-bottom: 0.4rem;
     }
     .member-desc {
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       color: var(--slate2);
       line-height: 1.5;
       margin-bottom: 0.35rem;
@@ -614,9 +593,9 @@
   <div class="section-wrap">
     <h2>Lab Members</h2>
 
-    <!-- ── CURRENT MEMBERS GRID ── -->
-    <!-- All cards sit side by side. PI card is slightly larger.
-         To add a new member: copy a member-card block, update name/role/desc/email/photo.
+    <!-- ── CURRENT MEMBERS GRID ──
+         All cards are the same size (180×180px).
+         To add a new member: copy a member-card block, update name/role/desc/photo.
          Upload the photo file to your GitHub repo root with the matching filename. -->
     <div class="lab-grid">
 
@@ -636,13 +615,10 @@
       <!-- 📷 Upload photo as: wei.jpg -->
       <div class="member-card">
         <img src="wei.jpg" alt="Wei Wang"
-             style="width:150px;height:150px;object-fit:cover;"
              onerror="this.style.display='none'"/>
         <div class="member-info">
           <div class="member-name">Wei Wang</div>
           <div class="member-role">Research Associate</div>
-          <div class="member-desc">[Research interest or project]</div>
-          <a class="member-email" href="mailto:netid@utk.edu">netid@utk.edu</a>
         </div>
       </div>
 
@@ -650,13 +626,10 @@
       <!-- 📷 Upload photo as: karuna.jpg when available -->
       <div class="member-card">
         <img src="karuna.jpg" alt="Karuna Chen"
-             style="width:150px;height:150px;object-fit:cover;"
              onerror="this.style.display='none'"/>
         <div class="member-info">
           <div class="member-name">Karuna Chen</div>
           <div class="member-role" style="color:#006064;">Farragut High School</div>
-          <div class="member-desc">[Project or interest description]</div>
-          <a class="member-email" href="mailto:email@school.edu">email@school.edu</a>
         </div>
       </div>
 
@@ -665,13 +638,11 @@
 
       <div class="member-card">
         <img src="FIRSTNAME.jpg" alt="Full Name"
-             style="width:150px;height:150px;object-fit:cover;"
              onerror="this.style.display='none'"/>
         <div class="member-info">
           <div class="member-name">Full Name</div>
           <div class="member-role">PhD Student / MS Student / Undergrad</div>
           <div class="member-desc">Research interest here</div>
-          <a class="member-email" href="mailto:netid@utk.edu">netid@utk.edu</a>
         </div>
       </div>
       ── END TEMPLATE ── -->
@@ -683,7 +654,7 @@
     <ul class="alumni-list">
       <li>
         <span class="badge ug">Undergrad</span>
-        Kaylea Simmons — Directed Research (Spring 2026)
+        Kaylea Simmons — DRA Spring 2026
       </li>
       <!-- Add more alumni here -->
     </ul>
